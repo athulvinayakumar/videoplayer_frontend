@@ -84,7 +84,7 @@ function Category() {
                 <Button onClick={handleShow} variant="warning" >Add new Category</Button>
             </div>
             <div className=" ms-2 mt-2 border border-secondary rounded">
-            {category1.length > 0 ? (
+            {category1?.length > 0 ? (
                 category1.map((category) => (
                     <div className="ms-5 m-5 p-3 border border-secondary rounded">
                         <div className="d-flex justify-content-between align-items-center" droppable onDragOver={(e) => dragOver(e)} onDrop={(e) => videoDrop(e, category?.id)}>
