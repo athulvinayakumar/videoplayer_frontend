@@ -18,6 +18,7 @@ function View({ uploadstatus }) {
 
     useEffect(() => {
         getAllUploadedVideo();
+        setDeleteVideo(false)
     }, [uploadstatus, deleteVideo]);
 
     return (
@@ -26,7 +27,7 @@ function View({ uploadstatus }) {
                 {all?.length > 0 ? (
                     all.map((item) => (
                         <Col sm={12} md={6} lg={4} xl={3}>
-                            <ViewCard display={item} setDeleteVideo={setDeleteVideo} />
+                            <ViewCard display={item} setDeleteVideo={setDeleteVideo} ispresent={true} />
                         </Col>
                     ))
                 ) : (

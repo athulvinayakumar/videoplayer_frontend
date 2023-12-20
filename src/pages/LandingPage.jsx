@@ -38,7 +38,7 @@ function LandingPage() {
           <Card className='p-4' style={{ width: '22em' }}>
             <Card.Img style={{ width: "100%", height: "300px" }} variant="top" src="https://i.pinimg.com/originals/2d/2d/51/2d2d51ba3d86b27b221abb162c24edc0.gif" />
             <Card.Body>
-              <Card.Title>Categorix=zed video</Card.Title>
+              <Card.Title>Categorixzed video</Card.Title>
               <Card.Text>
                 Some quick example text to build on the card title and make up the
                 bulk of the card's content.

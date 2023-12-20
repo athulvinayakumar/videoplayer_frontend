@@ -35,6 +35,8 @@ function Category() {
             setcategoryname('')
             // close model 
             setShow(false)
+            // to get the remaing cat
+            allcategories()
         } else {
             toast.danger('Something went wrong')
         }
@@ -47,11 +49,11 @@ function Category() {
         setcategory1(data);
     };
 
-    // 
+    // function to delte categories
     const deletecategory = async (id) => {
         await deleteallcategory(id);
         // to get the remaing cat
-        category1()
+        allcategories()
     }
 
     //  function to prevent reload so that data that we send wont last
@@ -84,30 +86,30 @@ function Category() {
                 <Button onClick={handleShow} variant="warning" >Add new Category</Button>
             </div>
             <div className=" ms-2 mt-2 border border-secondary rounded">
-            {category1?.length > 0 ? (
-                category1.map((category) => (
-                    <div className="ms-5 m-5 p-3 border border-secondary rounded">
-                        <div className="d-flex justify-content-between align-items-center" droppable onDragOver={(e) => dragOver(e)} onDrop={(e) => videoDrop(e, category?.id)}>
-                            <h6>{category.categoryname}</h6>
-                            <button onClick={() => deletecategory(category?.id)} className="btn btn-danger">
-                                <i className="fa-solid fa-trash-can"></i>
-                            </button>
-                        </div>
-                        <Row>
-                            {category?.allvideos.map((card) => (
-                                <Col className="p-3 mb-1" sm={12}>
-                                    <ViewCard display={card}  />
-                                </Col>
-                            ))}
-                        </Row>
+                {category1?.length > 0 ? (
+                    category1.map((category) => (
+                        <div className="ms-5 m-5 p-3 border border-secondary rounded">
+                            <div className="d-flex justify-content-between align-items-center" droppable onDragOver={(e) => dragOver(e)} onDrop={(e) => videoDrop(e, category?.id)}>
+                                <h6>{category.categoryname}</h6>
+                                <button onClick={() => deletecategory(category?.id)} className="btn btn-danger">
+                                    <i className="fa-solid fa-trash-can"></i>
+                                </button>
+                            </div>
+                            <Row>
+                                {category?.allvideos.map((card) => (
+                                    <Col className="p-3 mb-1" sm={12}>
+                                        <ViewCard display={card} />
+                                    </Col>
+                                ))}
+                            </Row>
 
-                    </div>
-                ))
-              
-            ) : (
-                <p style={{ textAlign: 'center', fontSize: '1.2rem', color: 'gray', marginTop: '1rem' }}>No category added</p>
-            )}
-  </div>
+                        </div>
+                    ))
+
+                ) : (
+                    <p style={{ textAlign: 'center', fontSize: '1.2rem', color: 'gray', marginTop: '1rem' }}>No category added</p>
+                )}
+            </div>
             <Modal
                 show={show}
                 onHide={handleClose}
