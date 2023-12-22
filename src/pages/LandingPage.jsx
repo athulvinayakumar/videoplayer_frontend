@@ -11,7 +11,7 @@ function LandingPage() {
       <Row className='d-flex justify-content-center align-items-center'>
         <Col></Col>
         <Col lg={5}>
-          <h2 className='mt-5'>Welcome to <span className='text-warning'>Media Player</span></h2>
+          <h2 className='mt-5'>Welcome to <span className='text-warning'>Video Player</span></h2>
           <p style={{ textAlign: 'justify' }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, sed ea laborum rem voluptates quis asperiores culpa quidem at adipisci deleniti necessitatibus ex. Amet officiis laboriosam corrupti, facere ipsum reprehenderit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet corrupti ullam necessitatibus in culpa consectetur quidem sapiente quaerat porro molestias sint quas, reiciendis ab vel facilis fuga dicta quae quibusdam!</p>
           <button onClick={()=>navigateByUrl('/home')} className='btn btn-warning mt-5'> Get Started</button>
           
